@@ -19,7 +19,9 @@
     <div class="w-full md:w-1/2 flex flex-col font-inter justify-center max-w-md mx-auto rounded-3xl p-10 md:p-16">
       <!-- Icon -->
       <div class="flex mb-6">
-        <img src="/games/ForgotPasswordMainEmail.svg" alt="OTP Icon" />
+        <NuxtImg
+        densities="x1" quality="80" format="webp" loading="lazy"
+         src="/games/ForgotPasswordMainEmail.png" alt="OTP Icon" />
       </div>
 
       <!-- Heading -->

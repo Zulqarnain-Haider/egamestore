@@ -48,7 +48,7 @@
         <span class="font-vazirmatn">{{ product.buttonText || 'Pre-Order' }}</span>
         <Icon name="heroicons:arrow-long-right"
           alt="Arrow"
-          class="w-3 h-3 sm:w-4 sm:h-4 text-orange-600 transition-transform duration-300 group-hover:translate-x-1.5"
+          class="w-3 h-3 sm:w-5 sm:h-5 text-orange-600 font-semibold transition-transform duration-300 group-hover:translate-x-1.5"
         />
       </button>
     </div>

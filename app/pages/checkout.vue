@@ -69,7 +69,9 @@
               >
                 <div v-if="selectedPayment === 'paypal'" class="w-2.5 h-2.5 bg-primary rounded-full"></div>
               </div>
-              <img src="/games/PayPal.png" alt="PayPal" class="object-contain" />
+              <NuxtImg
+              densities="x1" quality="80" format="webp" loading="lazy"
+               src="/games/PayPal.png" alt="PayPal" class="object-contain" />
               <span class="text-mainText items-baseline text-md font-medium">PayPal</span>
             </div>
           </div>
@@ -91,10 +93,18 @@
                   <div v-if="selectedPayment === 'card'" class="w-2.5 h-2.5 bg-primary rounded-full"></div>
                 </div>
                 <div class="flex items-center gap-2">
-                  <img src="/games/VISA.png" alt="Visa" class="object-contain" />
-                  <img src="/games/Stripe.png" alt="Stripe" class="object-contain" />
-                  <img src="/games/AximBank.png" alt="Axim" class="object-contain" />
-                  <img src="/games/GooglePay.png" alt="Gpay" class="object-contain" />
+                  <NuxtImg
+              densities="x1" quality="80" format="webp" loading="lazy"
+                  src="/games/VISA.png" alt="Visa" class="object-contain" />
+                  <NuxtImg
+              densities="x1" quality="80" format="webp" loading="lazy"
+                   src="/games/Stripe.png" alt="Stripe" class="object-contain" />
+                  <NuxtImg
+              densities="x1" quality="80" format="webp" loading="lazy"
+                   src="/games/AximBank.png" alt="Axim" class="object-contain" />
+                  <NuxtImg
+              densities="x1" quality="80" format="webp" loading="lazy"
+                   src="/games/GooglePay.png" alt="Gpay" class="object-contain" />
                 </div>
               </div>
             </div>
@@ -144,7 +154,9 @@
 
           <div v-for="item in cartItems" :key="item.id" class="flex justify-between text-sm py-3 border-b border-outline/40 last:border-none items-center">
             <div class="flex items-center gap-3">
-              <NuxtImg densities="x1" quality="80" format="webp" loading="lazy" :src="item.image" class="w-12 h-12 object-cover" />
+              <NuxtImg
+               densities="x1" quality="80" format="webp" loading="lazy" 
+               :src="item.image" class="w-12 h-12 object-cover" />
               <div>
                 <p class="font-medium">{{ item.title }}</p>
                 <p class="text-sm text-mainText">{{ item.category }}</p>

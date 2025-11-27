@@ -32,6 +32,7 @@
           densities="x1"
           quality="85"
           format="webp"
+          loading="lazy"
           class="w-full object-cover"
           alt="blog image"
         />

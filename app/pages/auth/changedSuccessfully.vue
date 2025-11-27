@@ -4,7 +4,8 @@
   >
     <!--Left Image -->
     <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0 z-10">
-      <img
+      <NuxtImg
+        densities="x1" quality="80" format="webp" loading="lazy"
         src="/games/ForgotPasswordLeft.png"
         alt="Password Changed Left"
         class="max-w-md w-full object-contain rounded-3xl"
@@ -17,10 +18,11 @@
     >
       <!-- Icon -->
       <div class="flex mb-5">
-        <img
+        <NuxtImg
+         densities="x1" quality="80" loading="lazy"
           src="/games/ResetPasswordSuccess.svg"
           alt="Success Icon"
-                  />
+          />
       </div>
 
       <!-- Heading -->

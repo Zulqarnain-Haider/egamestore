@@ -12,7 +12,8 @@
         class="relative w-20 aspect-square  rounded-full border-4 border-mainText overflow-hidden cursor-pointer group"
         @click="triggerFileInput"
       >
-        <NuxtImg densities="x1" quality="80" format="webp" loading="lazy"
+         <NuxtImg
+         densities="x1" quality="80" format="webp" loading="lazy"
          :src="previewImage"
           alt="User Avatar"
           class="w-full h-full object-cover bg-center transition-transform duration-300 group-hover:scale-105"

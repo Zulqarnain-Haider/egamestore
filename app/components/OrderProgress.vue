@@ -30,7 +30,7 @@
             densities="x1"
             quality="80" loading="lazy"
               v-if="index + 1 < currentStep"
-              src="/games/ProgressCompleted.svg"
+              src="/games/ProgressCompleted.png"
               alt="Completed"
               class="w-7 h-7"
             />
@@ -38,7 +38,7 @@
             densities="x1"
             quality="80" loading="lazy"
               v-else-if="index + 1 === currentStep"
-              src="/games/ProgressCurrent.svg"
+              src="/games/ProgressCurrent.png"
               alt="Current"
               class="w-8 h-8 animate-pulse-icon"
             />
@@ -46,7 +46,7 @@
             densities="x1"
             quality="80" loading="lazy"
               v-else
-              src="/games/ProgressPending.svg"
+              src="/games/ProgressPending.png"
               alt="Pending"
               class="w-7 h-7 opacity-80"
             />
@@ -91,7 +91,7 @@ const steps = [
   { id: 6, label: 'Delivered', time: 'TBD - Dec 20, 2025' },
 ]
 
-// 🔸 Map order.status → step index
+// Map order.status → step index
 const currentStep = computed(() => {
   const statusMap = {
     'Order Placed': 1,
@@ -104,7 +104,7 @@ const currentStep = computed(() => {
   return statusMap[props.order.status] || 1
 })
 
-// ✅ Step colors for lines
+// Step colors for lines
 const lineClass = (index) => {
   const stepNum = index + 1
   if (stepNum < currentStep.value) return 'bg-green-500'
@@ -112,7 +112,7 @@ const lineClass = (index) => {
   return 'bg-onMainText/30'
 }
 
-// ✅ Animated circle glow for current
+// Animated circle glow for current
 const circleEffect = (index) => {
   const stepNum = index + 1
   if (stepNum === currentStep.value) return 'relative animate-glow'
@@ -121,7 +121,7 @@ const circleEffect = (index) => {
 </script>
 
 <style scoped>
-/* 🌟 Custom soft pulse animation for current step */
+/*Custom soft pulse animation for current step */
 @keyframes glowPulse {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 145, 0, 0.45);

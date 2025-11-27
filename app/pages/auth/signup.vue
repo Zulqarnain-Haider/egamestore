@@ -224,10 +224,18 @@
 
       <!-- Social Icons -->
       <div class="flex justify-center gap-4 mb-6">
-        <img src="/games/Signinwith1.svg" alt="" class="cursor-pointer" />
-        <img src="/games/Signinwith2.svg" alt="" class="cursor-pointer" />
-        <img src="/games/Signinwith3.svg" alt="" class="cursor-pointer" />
-        <img src="/games/Signinwith4.svg" alt="" class="cursor-pointer" />
+        <NuxtImg
+         densities="x1" quality="85" loading="lazy"
+        src="/games/Signinwith1.svg" alt="" class="cursor-pointer" />
+        <NuxtImg
+         densities="x1" quality="85" loading="lazy"
+         src="/games/Signinwith2.svg" alt="" class="cursor-pointer" />
+        <NuxtImg
+         densities="x1" quality="85" loading="lazy"
+         src="/games/Signinwith3.svg" alt="" class="cursor-pointer" />
+        <NuxtImg
+         densities="x1" quality="85" loading="lazy"
+         src="/games/Signinwith4.svg" alt="" class="cursor-pointer" />
       </div>
 
       <!-- Login Link -->

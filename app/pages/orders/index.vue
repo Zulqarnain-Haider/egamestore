@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen font-poppins text-mainText py-10 px-7 md:px-16">
     <div class="max-w-7xl mx-auto space-y-8">
-      <!-- 🔹 Header -->
+      <!--Header -->
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
         <div>
           <h1 class="text-2xl md:text-3xl font-semibold">My Orders</h1>
@@ -10,7 +10,7 @@
           </p>
         </div>
 
-        <!-- 🔹 Search + Filter -->
+        <!--Search + Filter -->
         <div class="flex items-center gap-3 mt-4 md:mt-0 w-full md:w-auto">
           <div
             class="flex items-center bg-bgLight/40 border border-onFooter/90 rounded-lg px-3 py-2 w-full md:w-64"
@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <!-- 🔹 Stats Row -->
+      <!--Stats Row -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div
           v-for="(card, i) in statsCards"
@@ -47,7 +47,8 @@
         'bg-purple-200/90': i === 3    // Total Spent
       }" 
       >
-        <NuxtImg :src="card.icon" alt="icon" densities="x1" quality="80" loading="lazy" class="z-[9999]" />
+        <NuxtImg :src="card.icon" alt="icon" densities="x1" quality="80" 
+        format="webp" loading="lazy" class="z-[9999] w-8 h-8" />
           </div>
           <div class="flex flex-col items-start">
             <p class="text-xl font-semibold">{{ card.value }}</p>
@@ -56,19 +57,19 @@
         </div>
       </div>
 
-      <!-- 🔹 Orders List -->
+      <!--Orders List -->
 <div class="space-y-5">
   <div
     v-for="order in paginatedOrders"
     :key="order.id"
     class="border border-bgLight bg-bgLight/20 rounded-lg p-6 flex flex-col gap-3 relative overflow-hidden"
   >
-    <!-- 🧩 Top Row: Image + Info (Left) | Price + Buttons (Right) -->
+    <!-- Top Row: Image + Info (Left) | Price + Buttons (Right) -->
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
 
-      <!-- 🔹 LEFT SECTION -->
+      <!--LEFT SECTION -->
       <div class="flex items-center gap-4 w-full md:w-auto">
-        <!-- 🖼 Product Image -->
+        <!--Product Image -->
         <div class="relative w-20 h-20 flex-shrink-0">
           <NuxtImg
           densities="x1" quality="80" loading="lazy" format="webp"
@@ -77,7 +78,7 @@
             class="w-20 h-20 rounded-lg object-cover"
           />
 
-          <!-- ✅ Status Icon -->
+          <!--Status Icon -->
           <div
             v-if="order.status === 'Completed'"
             class="absolute bottom-0 right-0"
@@ -96,7 +97,7 @@
           </div>
         </div>
 
-        <!-- 🔸 Order Info -->
+        <!--Order Info -->
         <div class="flex flex-col justify-center">
           <h3 class="font-medium text-lg">{{ order.title }}</h3>
           <p class="text-onMainText text-sm">
@@ -114,7 +115,7 @@
         </div>
       </div>
 
-      <!-- 🔹 RIGHT SECTION -->
+      <!--RIGHT SECTION -->
       <div class="flex flex-col items-end gap-2 w-full md:w-auto">
         <p class="text-lg font-semibold">${{ order.price }}</p>
 
@@ -128,7 +129,7 @@
             extraClass="px-5 py-1 text-sm rounded-lg whitespace-nowrap"
             @click="openKeyModal(order)"
           >
-            <i class="fa-solid fa-key mr-1"></i> {{ order.primaryBtn }}
+            <Icon name="fa-solid:key" class="mr-1" /> {{ order.primaryBtn }}
           </AppButton>
 
           <!--Processing -->
@@ -136,8 +137,9 @@
             v-else-if="order.primaryBtn === 'Processing'"
             class="flex items-center gap-2 text-sm rounded-md px-3 py-[6px] bg-onMainText/40 font-medium text-mainText"
           >
-            <NuxtImg src="/games/HourGlassIcon.svg" densities="x1" quality="80" loading="lazy" 
-             alt="hourglass" class="w-4 h-4" />
+            <!-- <NuxtImg src="/games/HourGlassIcon.svg" densities="x1" quality="80" loading="lazy" 
+             alt="hourglass" class="w-4 h-4" /> -->
+             <Icon name="mdi-hourglass" class="w-5 h-5" /> 
             {{ order.primaryBtn }}
           </button>
 
@@ -146,8 +148,7 @@
             v-if="order.secondaryBtn === 'Email'"
             class="flex items-center gap-2 text-mainText bg-onMainText/30 rounded-md px-3 py-[6px] text-sm font-medium"
           >
-            <NuxtImg src="/games/OrdersEmailIcon.svg" densities="x1" quality="80" loading="lazy"
-             alt="email" class="w-4 h-4 text-mainText" />
+            <Icon name="mdi-email" class="w-5 h-5 text-mainText" />
             {{ order.secondaryBtn }}
           </button>
 
@@ -158,28 +159,27 @@
           >
            <NuxtImg
            densities="x1" quality="80" loading="lazy"
-    v-if="order.secondaryBtn === 'Order again'"
-    src="/games/OrdersIcon8.svg"
-    alt="Order Again"
-    class="w-4 h-4"
-  />
-  <NuxtImg 
-  densities="x1" quality="80" loading="lazy"
-    v-else-if="order.secondaryBtn === 'Play Now'"
-    src="/games/OrdersIcon9.svg"
-    alt="Play Now"
-    class="w-4 h-4"
-  />
+          v-if="order.secondaryBtn === 'Order again'"
+          src="/games/OrdersIcon8.svg"
+          alt="Order Again"
+         class="w-4 h-4"
+          />
+           <NuxtImg 
+           densities="x1" quality="80" loading="lazy"
+             v-else-if="order.secondaryBtn === 'Play Now'"
+             src="/games/OrdersIcon9.svg"
+             alt="Play Now"
+             class="w-4 h-4"
+           />
             {{ order.secondaryBtn }}
           </button>
         </div>
       </div>
     </div>
 
-          <!-- 🔹 Divider -->
+          <!-- Divider -->
           <div class="border-t border-onMainText/60"></div>
-
-          <!-- 🔹 Bottom Info Row -->
+          <!--Bottom Info Row -->
           <div class="flex justify-between items-center text-sm flex-wrap">
             <div class="text-onMainText space-x-3">
               <span>Platform: <span class="text-mainText">{{ order.platform }}</span></span>
@@ -210,10 +210,10 @@
 
                  
              <OrderKeyModal
-      :visible="showModal"
-  @close="showModal = false"
-  :orderKey="selectedOrder.key"
-  :serial="selectedOrder.serial"
+       :visible="showModal"
+       @close="showModal = false"
+       :orderKey="selectedOrder.key"
+       :serial="selectedOrder.serial"
      />
 
       <!--Pagination (Right Aligned) -->
@@ -369,7 +369,7 @@ const statsCards = ref([
   { icon: '/games/OrdersIcon1.png', value: 24, label: 'Total Orders' },
   { icon: '/games/OrdersIcon2.png', value: 22, label: 'Completed' },
   { icon: '/games/OrdersIcon3.png', value: 2, label: 'Processing' },
-  { icon: '/games/OrdersIcon4.svg', value: '$1,247', label: 'Total Spent' }
+  { icon: '/games/OrdersIcon4.png', value: '$1,247', label: 'Total Spent' }
 ])
 
 const perPage = 5

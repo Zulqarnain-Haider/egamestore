@@ -4,7 +4,9 @@
       
       <!-- About -->
       <div class="space-y-3 sm:col-span-2 md:col-span-3 lg:col-span-1">
-         <img src="/games/Navbar-logo.svg.svg" alt="" class="h-[45px] w-auto mb-6 md:mb-4">
+         <NuxtImg 
+         densities="x1" quality="80" format="webp" preload
+          src="/games/Navbar-logo.svg.svg" alt="" class="h-[45px] w-auto mb-6 md:mb-4" />
         <p class="text-lg">
           Step into the future of gaming with eGame Store. 
           Explore top-tier reviews, news, and in-depth analysis on the latest and 
@@ -62,21 +64,20 @@
       <div class="space-y-3">
         <h3 class="text-lg font-semibold text-outline mb-3">Contact Us</h3>
         <span v-if="settings.address" class="flex gap-1">
-        <img src="/games/Footer.Map.icon.svg" alt="">
+   <Icon name="heroicons-map-pin" class="w-8 h-10 text-white" />
           <p>{{ settings.address }}</p>
         </span>
 
         <span v-if="settings.phone" class="flex gap-1 ">
-        <img src="/games/Footer.Call.icon.svg" alt="">
-         <p>
+  <Icon name="heroicons-phone-20-solid" class="w-6 h-6 text-white rotate-12" />         <p>
             <a :href="`tel:${settings.phone}`" class="hover:text-primary">
               {{ settings.phone }}
             </a>
-            </p>
+            </p> 
         </span>
 
         <span v-if="settings.email" class="flex gap-1">
-        <img src="/games/Footer.Email.icon.svg" alt="">
+        <Icon name="mdi-email" class="w-6 h-6 text-white" />
          <p>
             <a
               :href="`mailto:${settings.email}`"

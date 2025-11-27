@@ -36,7 +36,7 @@
 
           <div class="flex justify-start items-center gap-2">
             <div class="bg-mainText px-3 py-2 rounded-lg flex items-center justify-center">
-              <i class="fa-solid fa-location-dot text-neutral-700"></i>
+              <Icon name="heroicons-map-pin-20-solid" class="text-neutral-700 w-6 h-6" />
             </div>
             <div>
               <p class="text-onMainText text-sm">Delivery Location</p>
@@ -46,7 +46,9 @@
 
           <div class="flex items-start gap-2">
             <div class="bg-mainText px-3 py-2 rounded-lg flex items-center justify-center">
-              <i class="fa-solid fa-wallet text-neutral-700"></i>
+              <!-- <i class="fa-solid fa-wallet text-neutral-700"></i> -->
+              <Icon name="heroicons-wallet-20-solid" class=" text-neutral-700 w-6 h-6" />
+
             </div>
             <div>
               <p class="text-onMainText text-sm whitespace-nowrap">Payment Method</p>
@@ -66,7 +68,7 @@
               variant="primary"
               extraClass="text-mainText flex items-center gap-2 text-sm rounded-lg px-4 py-2"
             >
-              <NuxtImg src="/games/OrdersIcon9.svg" class="w-4 h-4" /> Order Again
+             <Icon name="heroicons-arrow-path" class="w-4 h-4 text-white" /> Order Again
             </AppButton>
 
             <AppButton
@@ -75,28 +77,32 @@
               extraClass="bg-mainText flex items-center gap-2 text-sm text-primary rounded-lg px-4 py-2"
               @click="openKeyModal"
             >
-              <i class="fa-solid fa-key"></i> View Key
+              <Icon name="fa-solid:key" /> View Key
             </AppButton>
 
             <button
               v-else-if="order.primaryBtn === 'Processing'"
               class="flex items-center gap-2 text-sm rounded-md px-3 py-[6px] bg-onMainText/40 font-medium text-mainText"
             >
-              <NuxtImg src="/games/HourGlassIcon.svg" class="w-4 h-4" /> {{ order.primaryBtn }}
+              <!-- <NuxtImg src="/games/HourGlassIcon.svg" class="w-4 h-4"
+              densities="x1" quality="80" loading="lazy" 
+              /> -->
+              <Icon name="mdi-hourglass" class="w-5 h-5" /> 
+               {{ order.primaryBtn }}
             </button>
 
             <button
               v-if="order.secondaryBtn === 'Email'"
               class="flex items-center gap-2 text-mainText bg-onMainText/30 rounded-md px-3 py-[6px] text-sm font-medium"
             >
-              <NuxtImg src="/games/OrdersEmailIcon.svg" class="w-4 h-4" /> {{ order.secondaryBtn }}
+             <Icon name="mdi-email" class="w-5 h-5" /> {{ order.secondaryBtn }}
             </button>
 
             <AppButton
               variant="outline"
               extraClass="bg-mainText text-mainText flex items-center gap-2 text-sm text-primary rounded-lg px-4 py-2"
             >
-              <i class="fa-solid fa-download"></i> Download Invoice
+              <Icon name="fa-solid:download" /> Download Invoice
             </AppButton>
           </div>
         </div>

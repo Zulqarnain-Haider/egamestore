@@ -10,7 +10,9 @@
           <!-- Header -->
           <div class="flex items-center gap-3 mb-6">
             <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white">
-              <NuxtImg densities="x1" quality="80" loading="lazy" src="/wallet/ChatHeadPhone.svg" />
+              <NuxtImg 
+              densities="x1" quality="80" loading="lazy" 
+              src="/games/ChatHeadPhone.svg" />
             </div>
             <div>
               <div class="text-lg font-semibold">Support Chat</div>

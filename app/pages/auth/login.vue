@@ -86,10 +86,18 @@
 
       <!-- Social Icons -->
       <div class="flex justify-center gap-4 mt-12 mb-6">
-        <img src="/games/Signinwith1.svg" alt="Google" class="cursor-pointer" />
-        <img src="/games/Signinwith2.svg" alt="Facebook" class="cursor-pointer" />
-        <img src="/games/Signinwith3.svg" alt="Apple" class="cursor-pointer" />
-        <img src="/games/Signinwith4.svg" alt="Twitter" class="cursor-pointer" />
+        <NuxtImg 
+          densities="x1" quality="80" loading="lazy"
+        src="/games/Signinwith1.svg" alt="Google" class="cursor-pointer" />
+        <NuxtImg 
+          densities="x1" quality="80" loading="lazy"
+        src="/games/Signinwith2.svg" alt="Facebook" class="cursor-pointer" />
+        <NuxtImg 
+        densities="x1" quality="80" loading="lazy"
+        src="/games/Signinwith3.svg" alt="Apple" class="cursor-pointer" />
+        <NuxtImg
+          densities="x1" quality="80" loading="lazy"
+         src="/games/Signinwith4.svg" alt="Twitter" class="cursor-pointer" />
       </div>
 
       <!-- Signup Link -->

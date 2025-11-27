@@ -19,15 +19,25 @@
             <h2 class="font-medium capitalize">{{ categoryTitle }}</h2>
           </span>
 
-          <div class="flex items-center gap-2 text-sm sm:text-base">
+          <div class="flex items-center gap-2 text-sm sm:text-base relative">
             <span class="text-mainText/80 text-xl">Sort by:</span>
+  
+            <div class="relative">
             <select v-model="sortBy"
-              class="bg-bgDark border border-outline rounded-lg text-sm px-3 py-2 text-mainText focus:outline-none">
+              class="bg-bgDark border appearance-none border-outline rounded-lg text-md 
+              px-4 py-2 pr-10 cursor-pointer text-mainText focus:outline-none">
               <option value="default">Default</option>
               <option value="priceAsc">Price: Low → High</option>
               <option value="priceDesc">Price: High → Low</option>
               <option value="rating">Rating</option>
             </select>
+
+            <!-- Custom Arrow Icon -->
+          <Icon
+           name="heroicons-chevron-down-20-solid"
+           class="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none w-6 h-6 sm:w-7 sm:h-7 text-mainText"
+           />
+            </div>
           </div>
         </div>
 
@@ -123,8 +133,12 @@ function fetchProducts() {
   let filtered = productData.filter(p => p.category === category.value)
 
   // Apply filters
-  if (filters.value.genres.length)
-    filtered = filtered.filter(p => filters.value.genres.includes(p.genre))
+  if (filters.value.genres.length) {
+    filtered = filtered.filter(p =>
+   p.genres.some(g => filters.value.genres.includes(g))
+  )
+  }
+
   filtered = filtered.filter(p =>
     p.price >= filters.value.minPrice && p.price <= filters.value.maxPrice
   )

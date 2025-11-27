@@ -4,10 +4,10 @@
     <button
       :disabled="page <= 1"
       @click="$emit('update:page', page - 1)"
-      class="px-7 py-2 text-md rounded-md border border-onOutline text-mainText hover:bg-outline hover:text-white transition disabled:opacity-50"
+      class="px-3 py-2 text-md rounded-md border border-onOutline text-mainText hover:bg-outline hover:text-white transition disabled:opacity-50"
     >
     <template v-if="iconsOnly">
-        <i class="fa-solid fa-chevron-left text-xl"></i>
+        <Icon name="heroicons:chevron-left" class="text-2xl font-semibold" />
       </template>
       <template v-else>
         ‹ Prev
@@ -36,7 +36,7 @@
       class="px-3 py-2 text-md rounded-md border border-onOutline text-mainText hover:bg-outline hover:text-white transition disabled:opacity-50"
     >
      <template v-if="iconsOnly">
-        <Icon name="" class="text-xl" />
+        <Icon name="heroicons:chevron-right" class="text-2xl font-semibold" />
       </template>
       <template v-else>
         Next ›
